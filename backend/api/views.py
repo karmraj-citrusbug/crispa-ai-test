@@ -2,7 +2,7 @@ from django.http import JsonResponse
 from rest_framework import viewsets, status
 from rest_framework.response import Response
 
-from .models import Account, Currency, JournalEntryLines
+from .models import Account, Currency, JournalEntryLines, JOURNAL_ENTRY_LINES_CHOICES
 from .serializers import (
     AccountSerializer,
     CurrencySerializer,
@@ -37,10 +37,10 @@ class JournalEntryLinesViewSet(viewsets.ModelViewSet):
         instance = self.get_object()
 
         # Check if the entry is booked
-        if instance.is_booked:
+        if instance.accounting_type == JOURNAL_ENTRY_LINES_CHOICES.BOOKED:
             return Response(
                 {"error": "Booked entries cannot be updated."},
                 status=status.HTTP_403_FORBIDDEN,
             )
 
-        return super().update(request, *args, **kwargs)
+        return super().update(request, args, *kwargs)
