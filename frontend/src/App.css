@@ -1,0 +1,177 @@
+/* font css */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/* scrollbar css */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #f2f2f2;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+.main-section-wrapper * {
+  font-family: Outfit !important;
+}
+.main-section-wrapper {
+  background: linear-gradient(180deg, #242d46 0%, #484361 100%);
+  padding: 28px 34px 34px;
+  height: 100vh;
+}
+.custom-tabs button {
+  color: #9da3ae;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-transform: none;
+  padding: 12px 10px;
+  border-bottom: 2px solid;
+  border-bottom-color: #9da3ae;
+}
+
+.custom-tabs button.Mui-selected {
+  color: #57e9e0;
+  border-bottom-color: #57e9e0 !important;
+}
+.custom-tabs .MuiTabs-indicator {
+  background-color: #57e9e0;
+}
+.main-content-wrapper {
+  background: #fff;
+  box-shadow: 0px 15px 120px 0px #0000001a;
+  border-radius: 16px;
+  max-width: 100%;
+  padding: 15px 30px 15px 15px;
+  margin-bottom: 10px;
+}
+.tab-panel-div > div {
+  padding: 17px 0;
+}
+.top-left-sec h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #000;
+}
+
+.top-left-sec p {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #00000099;
+  margin: 0;
+}
+.top-section {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.top-right-sec h2 {
+  margin: 0;
+  color: #282828;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: right;
+}
+.top-right-sec {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.theme-btn {
+  border: 2px solid #2dd4cf;
+  background: #57e9e0;
+  height: 34px;
+  min-width: 92px;
+  max-width: 92px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #115c5e;
+  cursor: pointer;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.theme-btn:hover {
+  background: #383a55;
+  border: 2px solid #383a55;
+  color: #fff;
+}
+.top-right-sec input {
+  border: 0;
+  border-radius: 6px;
+  padding: 0px 12px;
+  height: 34px;
+  color: #808080;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+.custom-date-feild input {
+  border: 0;
+}
+
+.custom-date-feild .MuiOutlinedInput-root {
+  width: 180px;
+}
+
+.yearTabs {
+  display: flex;
+  gap: 5rem;
+  position: relative;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.currentYear,
+.prevYear,
+.nextPrevYear {
+  /* position: absolute; */
+  border-top: 1px solid #e2e9f0;
+  width: 100%;
+  text-align: center;
+  font-family: Outfit;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 10px;
+  letter-spacing: 0em;
+  text-align: center;
+  width: 400px;
+}
+
+.currentYear {
+  margin-left: 1.7rem;
+}
