@@ -1,31 +1,19 @@
 import React from "react";
-import { QueryClient, QueryClientProvider, useQuery } from "react-query";
+import Index from "./Pages/Index";
+// import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-// Create a client
-const queryClient = new QueryClient();
+import "./App.css";
 
-function FetchHelloWorld() {
-  const { isLoading, error, data } = useQuery("fetchHello", () =>
-    fetch("http://localhost:8000/api/hello/").then((res) => res.json())
-  );
+// const client = new QueryClient();
 
-  if (isLoading) return "Loading...";
-
-  if (error) return "An error has occurred: " + error.message;
-
-  return <div>{data.message}</div>;
-}
-
-function App() {
+const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <div className="App">
-        <header className="App-header">
-          <FetchHelloWorld />
-        </header>
-      </div>
-    </QueryClientProvider>
+    <div style={{ height: "100vh" }}>
+      {/* <QueryClientProvider client={client}> */}
+      <Index />
+      {/* </QueryClientProvider> */}
+    </div>
   );
-}
+};
 
 export default App;
