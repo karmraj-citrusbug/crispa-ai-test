@@ -6,7 +6,8 @@ from .models import Account, Currency, JournalEntryLines
 from .serializers import (
     AccountSerializer,
     CurrencySerializer,
-    JournalEntryLinesSerializer,
+    JournalEntryLinesCUDSerializer,
+    JournalEntryLinesListSerializer,
 )
 
 
@@ -26,7 +27,11 @@ class CurrencyViewSet(viewsets.ModelViewSet):
 
 class JournalEntryLinesViewSet(viewsets.ModelViewSet):
     queryset = JournalEntryLines.objects.all()
-    serializer_class = JournalEntryLinesSerializer
+    serializer_class = JournalEntryLinesCUDSerializer
+
+    def list(self, request, *args, **kwargs):
+        self.serializer_class = JournalEntryLinesListSerializer
+        return super().list(request, *args, **kwargs)
 
     def update(self, request, *args, **kwargs):
         instance = self.get_object()

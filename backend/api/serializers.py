@@ -13,7 +13,7 @@ class CurrencySerializer(serializers.ModelSerializer):
         model = Currency
         fields = "__all__"
 
-    
+
 class AccountCustomSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
@@ -26,10 +26,26 @@ class CurrencyCustomSerializer(serializers.ModelSerializer):
         fields = ["code"]
 
 
-class JournalEntryLinesSerializer(serializers.ModelSerializer):
+class JournalEntryLinesCUDSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = JournalEntryLines
+        fields = "__all__"
+
+
+class JournalEntryLinesListSerializer(serializers.ModelSerializer):
     account = AccountCustomSerializer()
     currency = CurrencyCustomSerializer()
 
     class Meta:
         model = JournalEntryLines
-        fields = ["uid", "description", "accounting_date", "account", "currency","amount", "state", "accounting_type", "reconciled"]
+        fields = [
+            "uid",
+            "description",
+            "accounting_date",
+            "account",
+            "currency",
+            "amount",
+            "state",
+            "accounting_type",
+            "reconciled",
+        ]
